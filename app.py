@@ -56,14 +56,15 @@ with col2:
         file_name=cvPdf.name,
         mime="application/octet-stream",
     )
-    st.write("📫", EMAIL)
+    
 
 # --- Liens pour les reseaux sociaux ---
     
     st.write('\n')
 cols = st.columns(len(SOCIAL_MEDIA)) # len sert a compter le nmb de colonne dans "social_media"
 for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
-    cols[index].write(f"[{platform}]({link})")
+    cols[index].write(f'<a href="{link}" class="social-link">{platform}</a>',
+        unsafe_allow_html=True)
 
 
 

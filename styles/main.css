@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a{
+    text-decoration: none;
+    color: white !important ;
+    font-weight: 500;
+    text-align: center;
+}
+
+a:hover{
+    color: #b3d9ff !important;
+    text-decoration: none;
+}
+
+.social-link {
+    border-radius: 15%;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    margin: 20px;
+}
