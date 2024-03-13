@@ -24,3 +24,45 @@ a:hover{
     padding: 15px;
     margin: 20px;
 }
+
+
+
+
+/* test */
+
+
+
+.hover-content {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.details {
+    visibility: hidden;
+    position: absolute;
+    background-color: #d9ecff;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1;
+    width: 200px;
+    top: 125%;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.hover-content:hover .details {
+    visibility: visible;
+    opacity: 1;
+}
+.title {
+    font-weight: bold;
+    color: #ffffff;
+}
+.vertical-list {
+    display: flex;
+    flex-direction: column;
+}

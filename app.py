@@ -50,21 +50,19 @@ with col1:
 with col2:
     st.title(NAME)
     st.write(DESCRIPTION)
-    st.download_button(
-        label=" 📄 CV ",
-        data=PDFbyte,
-        file_name=cvPdf.name,
-        mime="application/octet-stream",
-    )
-    
+   # st.download_button(
+    #    label=" 📄 CV ",
+     #   data=PDFbyte,
+      #  file_name=cvPdf.name,
+       # mime="application/octet-stream",
+   # )
 
 # --- Liens pour les reseaux sociaux ---
     
     st.write('\n')
 cols = st.columns(len(SOCIAL_MEDIA)) # len sert a compter le nmb de colonne dans "social_media"
 for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
-    cols[index].write(f'<a href="{link}" class="social-link">{platform}</a>',
-        unsafe_allow_html=True)
+    cols[index].write(f"[{platform}]({link})")
 
 
 
@@ -73,27 +71,81 @@ st.subheader("Compétences")
 
 col3, col4 = st.columns(2, gap="small")
 
-with col3: st.write(
-    """
--  Web & Multimédia 
-    -  Conception de sites Web
-    -  Édition vidéo
-    -  Montages vidéo
-    -  Suite Adobe
-    -  HTML, CSS, SASS, PHP, SQL
-"""
-)
-with col4: st.write(
-    """
--   Animation et Jeux
-    -  Conception de Jeux vidéo
-    -  Conception de modèles 3D
-    -  Conception d’animations
-    -  Suite Autodesk
-    -  Unity
-    -  c#, Javascript, Python
-"""
-)
+with col3:
+    st.write(
+        """
+    <div class="vertical-list">
+        <div class="hover-content">
+            <span class="title"> <p>- Conception de sites Web </p> </span>
+            <div class="details">
+                <p> HTML, CSS, SQL, PHP </p>
+            </div>
+        </div>
+         <div class="hover-content">
+            <span class="title"> <p>- Édition vidéo </p> </span>
+            <div class="details">
+                <p>Premiere Pro, After Effects</p>
+            </div>
+        </div>
+         <div class="hover-content">
+            <span class="title"> <p>- Montages vidéo </p> </span>
+            <div class="details">
+                <p>Premiere Pro, After Effects</p>
+            </div>
+        </div>
+         <div class="hover-content">
+            <span class="title"> <p>- Suite Adobe </p> </span>
+            <div class="details">
+                <p>Premiere Pro, After Effects, Photoshop, Lightroom, Illustrator, XD, Encoder </p>
+            </div>
+        </div>
+    </div>    
+        """
+        ,
+        unsafe_allow_html=True
+    )
+
+with col4:
+     st.write(
+        """
+    <div class="vertical-list">
+        <div class="hover-content">
+            <span class="title"> <p>- Conception de Jeux vidéo </p> </span>
+            <div class="details">
+                <p> c#, Javascript, Python, Unity </p>
+            </div>
+        </div>
+         <div class="hover-content">
+            <span class="title"> <p>- Conception de modèles 3D </p> </span>
+            <div class="details">
+                <p>Maya 3D, Mudbox</p>
+            </div>
+        </div>
+         <div class="hover-content">
+            <span class="title"> <p>- Conception d’animations </p> </span>
+            <div class="details">
+                <p>Illustrator, Photoshop, Unity</p>
+            </div>
+        </div>
+         <div class="hover-content">
+            <span class="title"> <p>- Suite Autodesk </p> </span>
+            <div class="details">
+                <p> Maya 3D, Mudbox </p>
+            </div>
+        </div>
+        <div class="hover-content">
+            <span class="title"> <p>- Unity </p> </span>
+            <div class="details">
+                <p>c#, Unity 3D, Unity 2D </p>
+            </div>
+        </div>
+        
+    </div>    
+        """
+        ,
+        unsafe_allow_html=True
+    )
+
 
 # --- Éducation---
 st.write('\n')
