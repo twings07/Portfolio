@@ -9,6 +9,8 @@ current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
 cvPdf = current_dir / "assets" / "CvTwings.pdf"
 photoProfil = current_dir / "assets" / "photoProfil.png"
+photoProjet1 = Image.open("assets/tictactoe.png")
+photoProjet2 = Image.open("assets/sudoku.png")
 
 # --- DESCRIPTION GENERAL ---
 PAGE_TITLE = "CV | Twingstan Edward"
@@ -50,6 +52,10 @@ with col1:
 with col2:
     st.title(NAME)
     st.write(DESCRIPTION)
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
+    st.write('\n')
    # st.download_button(
     #    label=" 📄 CV ",
      #   data=PDFbyte,
@@ -59,14 +65,13 @@ with col2:
 
 # --- Liens pour les reseaux sociaux ---
     
-    st.write('\n')
 cols = st.columns(len(SOCIAL_MEDIA)) # len sert a compter le nmb de colonne dans "social_media"
 for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
     cols[index].write(f"[{platform}]({link})")
 
-
-
 # --- Compétences---
+st.write('\n')
+st.write("----")
 st.subheader("Compétences")
 
 col3, col4 = st.columns(2, gap="small")
@@ -146,10 +151,25 @@ with col4:
         unsafe_allow_html=True
     )
 
-
-# --- Éducation---
+# --- Expériences professionnelles---
 st.write('\n')
-st.subheader("Éducation")
+st.write("----")
+st.subheader("Expériences professionnelles")
+st.write(
+    """
+-   2018 - 2023 Salle de réception Eveagreen:
+    -   Serveur
+    -   Livreur
+-   2018 - 2024 Winners:
+    -   Associé de magasin
+    -   Caissier
+"""
+)
+
+# --- Formations ---
+st.write('\n')
+st.write("----")
+st.subheader("Formations")
 st.write(
     """
 -  2019 - 2024 D.E.C Intégration multimédia
@@ -157,18 +177,57 @@ st.write(
 """
 )
 
-# --- Expériences professionnelles---
+
+# --- Projets ---
 st.write('\n')
-st.subheader("Expériences professionnelles")
-st.write(
-    """
--   2018 - 2023 Salle de réception Eveagreen:
-    -   Serveur
-    -   Livreur
--   2018 - 2023 Winners:
-    -   Associé de magasin
-    -   Caissier
-"""
-)
-
-
+with st.container():
+    st.write("----")
+    st.subheader("Mes projets")
+    st.write("##")
+    image_column, description_column = st.columns((1, 2))
+    with image_column:
+        st.image(photoProjet1)
+    with description_column:
+        st.subheader("TicTacToe")
+        st.write(
+            """
+            Mon projet tictascvor fait en putdkjaslkdaj das
+            asd
+            adawdwadadjawd
+            a
+            dwaodawdwada
+            dakda  
+            daw
+            dawda
+            wdad
+            ad
+            """
+        )
+        st.markdown("[GitHub](https://github.com/twings07/TicTacToe)", unsafe_allow_html=True)
+        
+        
+    
+    st.write("##")
+    image_column, description_column = st.columns((1, 2))
+    with image_column:
+        st.image(photoProjet2)
+    with description_column:
+        st.subheader("Sudoku")
+        st.write(
+            """
+            Mon projet tictascvor fait en putdkjaslkdaj das
+            asd
+            adawdwadadjawd
+            a
+            dwaodawdwada
+            dakda  
+            daw
+            dawda
+            wdad
+            ad
+            """
+        )
+        st.markdown("[GitHub](https://github.com/twings07/Sudoku)", unsafe_allow_html=True)
+        
+        
+        

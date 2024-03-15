@@ -1,20 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+/* reset styles streamlit */
+
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+ul{list-style-type: none;}
+hr{
+    margin-top: 0px;
+    margin-bottom: 5%;
+    background-color: #61aefb;
+}
+
+
 *{
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
+    
 }
 
 a{
     text-decoration: none;
-    color: white !important ;
+    
     font-weight: 500;
     text-align: center;
 }
 
 a:hover{
-    color: #b3d9ff !important;
+    color: #7fbfff !important;
     text-decoration: none;
 }
 
@@ -26,19 +41,13 @@ a:hover{
 }
 
 
-
-
-/* test */
-
-
-
+/* styles pour la liste des competences */
 .hover-content {
     position: relative;
     display: inline-block;
     cursor: pointer;
     padding: 5px;
 }
-
 .details {
     visibility: hidden;
     position: absolute;
