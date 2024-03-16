@@ -1,12 +1,19 @@
+/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-/* reset styles streamlit */
 
+/* reset styles streamlit */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
+[data-testid="StyledLinkIconContainer"] a{
+    display: none;
+}
+[data-testid="StyledFullScreenButton"]{
+    display: none;
+}
 
-ul{list-style-type: none;}
+/* couleur de la ligne de division */
 hr{
     margin-top: 0px;
     margin-bottom: 5%;
@@ -18,8 +25,15 @@ hr{
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
-    
+
 }
+
+[data-testid="stAppViewContainer"]{
+    background-image: url(https://img.freepik.com/free-vector/dark-graphic-wavy-wallpaper_23-2148400270.jpg?w=1380&t=st=1710546040~exp=1710546640~hmac=64854f4ed63b33b104532d5e86065c9ceb25d8b948eb2fdfdf37b051e40c7e1e);
+    background-size: cover;
+}
+
+
 
 a{
     text-decoration: none;
