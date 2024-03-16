@@ -25,11 +25,10 @@ hr{
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
-
 }
 
 [data-testid="stAppViewContainer"]{
-    background-image: url(https://img.freepik.com/free-vector/dark-graphic-wavy-wallpaper_23-2148400270.jpg?w=1380&t=st=1710546040~exp=1710546640~hmac=64854f4ed63b33b104532d5e86065c9ceb25d8b948eb2fdfdf37b051e40c7e1e);
+    background-image: url("assets/sudoku.png");
     background-size: cover;
 }
 

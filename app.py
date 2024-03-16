@@ -12,6 +12,10 @@ photoProfil = current_dir / "assets" / "photoProfil.png"
 photoProjet1 = Image.open("assets/tictactoe.png")
 photoProjet2 = Image.open("assets/sudoku.png")
 
+
+
+
+
 # --- DESCRIPTION GENERAL ---
 PAGE_TITLE = "CV | Twingstan Edward"
 PAGE_ICON = ":wave:"
@@ -30,14 +34,19 @@ SOCIAL_MEDIA_ICONS = {
 
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
-# --- LOAD CSS, PDF et l'image ---
+# --- charger le CSS, PDF et les images ---
+#photo de profil
+photoProfil = Image.open(photoProfil)
+#css
 with open(css_file) as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
+#pdf    
 with open(cvPdf, "rb") as pdf_file:
     PDFbyte = pdf_file.read()
-photoProfil = Image.open(photoProfil)
+    
 
-# --- Header ---
+
+#SECTION INTRO
 col1, col2 = st.columns(2, gap="small")
 
 with col1:
@@ -50,35 +59,25 @@ with col2:
     st.write('\n')
     st.write('\n')
     st.write('\n')
-   # st.download_button(
-    #    label=" 📄 CV ",
-     #   data=PDFbyte,
-      #  file_name=cvPdf.name,
-       # mime="application/octet-stream",
-   # )
-    
+
+
+#LES RESEAUX SOCIAUX
 col5, col6, col7 = st.columns(3)
-
 with col5:
-    st.markdown('<div style="display: flex; justify-content: center;"><a href="https://www.behance.net/twingsEdward"><img src="https://img.icons8.com/ffffff/behance"/></a></div>', unsafe_allow_html=True)
-
+    st.markdown('<div style="display: flex; justify-content: center;"><a href="https://github.com/twings07"><img src="https://img.icons8.com/ffffff/github"/></a></div>', unsafe_allow_html=True)
 with col6:
     st.markdown('<div style="display: flex; justify-content: center;"><a href="https://www.linkedin.com/in/edward-twingstan"><img src="https://img.icons8.com/ffffff/linkedin.png"/></a></div>', unsafe_allow_html=True)
-
 with col7:
-    st.markdown('<div style="display: flex; justify-content: center;"><a href="https://github.com/twings07"><img src="https://img.icons8.com/ffffff/github"/></a></div>', unsafe_allow_html=True)
-
+    st.markdown('<div style="display: flex; justify-content: center;"><a href="https://www.behance.net/twingsEdward"><img src="https://img.icons8.com/ffffff/behance"/></a></div>', unsafe_allow_html=True)
 st.write('\n')
 st.write('\n')
 
-# --- Compétences---
 
+# --- COMPETENCES---
 st.write("----")
 st.write('\n')
 st.subheader("Compétences")
-
 col3, col4 = st.columns(2, gap="small")
-
 with col3:
     st.write(
         """
@@ -173,7 +172,7 @@ with col4:
         unsafe_allow_html=True
     )
 
-# --- Expériences professionnelles---
+# --- EXPERIENCES PROFESSIONNELLES ---
 st.write('\n')
 st.write("----")
 st.subheader("Expériences professionnelles")
@@ -188,7 +187,7 @@ st.write(
 """
 )
 
-# --- Formations ---
+# --- FORMATIONS ---
 st.write('\n')
 st.write("----")
 st.subheader("Formations")
@@ -200,7 +199,7 @@ st.write(
 )
 
 
-# --- Projets ---
+# --- PROJETS ---
 st.write('\n')
 with st.container():
     st.write("----")
@@ -234,6 +233,21 @@ with st.container():
             """
         )
         st.markdown("[GitHub](https://github.com/twings07/Sudoku)", unsafe_allow_html=True)
-        
-        
-        
+    
+    
+    #Section pour sidebar    
+    st.sidebar.title("Retrouvez-moi ici")
+    st.sidebar.write(""" 
+             Vous trouverez ci-dessous tous les moyens de me contacter, ainsi que mes profils sur les réseaux sociaux. 
+             Explorez mes liens pour en apprendre davantage sur mes projets et mon parcours professionnel.
+             """)
+    st.sidebar.markdown('<a href="https://github.com/twings07"><img src="https://img.icons8.com/ffffff/28/github"/> Github </a>', unsafe_allow_html=True)
+    st.sidebar.markdown('<a href="https://www.linkedin.com/in/edward-twingstan"><img src="https://img.icons8.com/ffffff/28/linkedin.png"/> LinkedIn </a>', unsafe_allow_html=True)        
+    st.sidebar.markdown('<a href="https://www.behance.net/twingsEdward"><img src="https://img.icons8.com/ffffff/28/behance"/> Behance </a>', unsafe_allow_html=True)
+    st.sidebar.write("Mon CV est disponible ici.")
+    st.sidebar.download_button(
+        label=" 📄 CV ",
+        data=PDFbyte,
+        file_name=cvPdf.name,
+        mime="application/octet-stream",
+    )   
