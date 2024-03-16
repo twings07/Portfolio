@@ -26,9 +26,9 @@ hr{
     font-weight: 400;
     font-style: normal;
 }
-
+/* image de fonds pour le site*/
 [data-testid="stAppViewContainer"]{
-    background-image: url("assets/sudoku.png");
+    background-image: url(https://img.freepik.com/free-vector/dark-graphic-wavy-wallpaper_23-2148400270.jpg?t=st=1710560678~exp=1710564278~hmac=e70cc0f6a5d5144e46b14bfbc6f5d1f51f778550ac155b1b86784ff8d3daf704&w=1380);
     background-size: cover;
 }
 
@@ -36,7 +36,6 @@ hr{
 
 a{
     text-decoration: none;
-    
     font-weight: 500;
     text-align: center;
 }

@@ -3,34 +3,24 @@ from pathlib import Path
 import streamlit as st 
 from PIL import Image
 
-
 # Configuration des paths
 current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 css_file = current_dir / "styles" / "main.css"
-cvPdf = current_dir / "assets" / "CvTwings.pdf"
-photoProfil = current_dir / "assets" / "photoProfil.png"
-photoProjet1 = Image.open("assets/tictactoe.png")
-photoProjet2 = Image.open("assets/sudoku.png")
-
-
-
-
+cvPdf = current_dir / "assets" / "files" / "CvTwings.pdf"
+photoProfil = current_dir / "assets" / "photos"/ "photoProfil.png"
+photoProjet1 = Image.open("assets/projets/tictactoe.png")
+photoProjet2 = Image.open("assets/projets/sudoku.png")
+photoProjet3 = Image.open("assets/projets/portfolio.png")
 
 # --- DESCRIPTION GENERAL ---
-PAGE_TITLE = "CV | Twingstan Edward"
-PAGE_ICON = ":wave:"
+PAGE_TITLE = "Twingstan Edward"
+PAGE_ICON = ":cat:"
 NAME = "Twingstan Edward"
 DESCRIPTION = """
 Un finissant en multimédia qui s'intéresse au monde de la technologie, et passionné par la programmation. 
 Je suis à la recherche  d'un stage dans le domaine du jeux vidéo ou dans le web. 
 J’aime concevoir des modèles 3D. 
 """
-
-SOCIAL_MEDIA_ICONS = {
-    "LinkedIn": "assets/icons/linkedin.png",
-    "GitHub": "assets/icons/github.png",
-    "Behance": "assets/icons/behance.png",
-}
 
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
@@ -43,9 +33,8 @@ with open(css_file) as f:
 #pdf    
 with open(cvPdf, "rb") as pdf_file:
     PDFbyte = pdf_file.read()
+
     
-
-
 #SECTION INTRO
 col1, col2 = st.columns(2, gap="small")
 
@@ -172,6 +161,7 @@ with col4:
         unsafe_allow_html=True
     )
 
+
 # --- EXPERIENCES PROFESSIONNELLES ---
 st.write('\n')
 st.write("----")
@@ -198,12 +188,12 @@ st.write(
 """
 )
 
-
 # --- PROJETS ---
 st.write('\n')
 with st.container():
     st.write("----")
     st.subheader("Mes projets")
+    #projet 1
     st.write("##")
     image_column, description_column = st.columns((1, 2))
     with image_column:
@@ -219,7 +209,7 @@ with st.container():
         st.markdown("[GitHub](https://github.com/twings07/TicTacToe)", unsafe_allow_html=True)
         
         
-    
+    #projet 2
     st.write("##")
     image_column, description_column = st.columns((1, 2))
     with image_column:
@@ -234,6 +224,23 @@ with st.container():
         )
         st.markdown("[GitHub](https://github.com/twings07/Sudoku)", unsafe_allow_html=True)
     
+    #projet 3
+    st.write("##")
+    image_column, description_column = st.columns((1, 2))
+    with image_column:
+        st.image(photoProjet3)
+    with description_column:
+        st.subheader("Portfolio en ligne")
+        st.write(
+            """
+           Utilisant Python et Streamlit, j'ai conçu mon propre site de portfolio en ligne. 
+           Ce site permet aux visiteurs d'explorer mes projets et découvrir mon parcours professionnel 
+           en toute simplicité.
+            """
+        )
+        st.markdown("[GitHub](https://github.com/twings07/Portfolio)", unsafe_allow_html=True)
+    
+    
     
     #Section pour sidebar    
     st.sidebar.title("Retrouvez-moi ici")
@@ -241,6 +248,7 @@ with st.container():
              Vous trouverez ci-dessous tous les moyens de me contacter, ainsi que mes profils sur les réseaux sociaux. 
              Explorez mes liens pour en apprendre davantage sur mes projets et mon parcours professionnel.
              """)
+    st.sidebar.markdown( ":mailbox:"'<a href="https://edwardtwingstan@gmail.com">edwardtwingstan@gmail.com </a>', unsafe_allow_html=True)
     st.sidebar.markdown('<a href="https://github.com/twings07"><img src="https://img.icons8.com/ffffff/28/github"/> Github </a>', unsafe_allow_html=True)
     st.sidebar.markdown('<a href="https://www.linkedin.com/in/edward-twingstan"><img src="https://img.icons8.com/ffffff/28/linkedin.png"/> LinkedIn </a>', unsafe_allow_html=True)        
     st.sidebar.markdown('<a href="https://www.behance.net/twingsEdward"><img src="https://img.icons8.com/ffffff/28/behance"/> Behance </a>', unsafe_allow_html=True)
